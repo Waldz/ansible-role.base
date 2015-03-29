@@ -1,0 +1,7 @@
+---
+- name: Create auth keys
+  sudo: true
+  authorized_key: >
+    user={{ item.user }}
+    key="{{ lookup('file', 'item.key') }}"
+  with_items: auth_keys

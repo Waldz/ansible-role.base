@@ -1,0 +1,11 @@
+---
+- name: Create SSH directory for deploy user
+  sudo: yes
+  sudo_user: "{{ deploy_user }}"
+  file: state=directory path="~/.ssh/" mode=0700
+
+
+- name: Send SSH key to remote deploy user
+  sudo: yes
+  sudo_user: "{{ deploy_user }}"
+  copy: src="{{ deploy_key }}" dest="~/.ssh/id_dsa"  mode=0600

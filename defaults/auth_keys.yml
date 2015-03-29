@@ -1,0 +1,4 @@
+---
+auth_keys:
+  - user: valdas
+    key: ~/.ssh/id_rsa.pub

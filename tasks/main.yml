@@ -1,0 +1,14 @@
+---
+  - include: auth_users.yml
+    when: auth_users is defined
+
+  - include: auth_keys.yml
+    when: auth_keys is defined
+
+  - include: auth_sudo.yml
+    when: auth_sudo is defined
+
+  - include: deploy_key.yml
+    when: deploy_key is defined
+
+  - include: packages.yml

@@ -1,0 +1,13 @@
+---
+- name: Create auth users
+  sudo: true
+  user: >
+    name="{{ item.name }}"
+    comment="{{ item.comment | default(item.name) }}"
+    {% if item.group is defined %}
+      group="{{ item.group }}"
+    {% endif %}
+    {% if item.groups is defined %}
+      groups="{{ item.groups }}"
+    {% endif %}
+  with_items: auth_users

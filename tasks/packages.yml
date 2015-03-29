@@ -1,0 +1,27 @@
+---
+# This is optional, but effectively prevents the installation of i386 packages.
+# Handy when you have an amd64-only local apt mirror.
+- name: Remove i386 architecture
+  sudo: true
+  shell: dpkg --remove-architecture i386
+  when: ansible_distribution_release == "saucy"
+  tags: firstrun
+
+
+# This is very useful.  Basically translates to "run apt-get update" on the target
+- name: Regenerate apt-cache
+  sudo: true
+  apt: update_cache=yes
+
+
+#If you're doing lots of packages at once, you can use with_items, and provide the apt: module with pkg={{ item }} and you get something like a foreach in [list] effect.
+- name: install default packages
+  sudo: true
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - vim
+    - htop
+    - screen
+    - git
+    - curl
+    - lynx
