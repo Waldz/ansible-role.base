@@ -1,4 +1,9 @@
 ---
+- name: Create auth keys directories
+  sudo: true
+  user: name={{ item.user }} createhome=yes
+  with_items: auth_keys
+
 - name: Create auth keys
   sudo: true
   authorized_key: >
