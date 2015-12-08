@@ -4,10 +4,7 @@
   user: >
     name="{{ item.name }}"
     comment="{{ item.comment | default(item.name) }}"
-    {% if item.group is defined %}
-      group="{{ item.group }}"
-    {% endif %}
-    {% if item.groups is defined %}
-      groups="{{ item.groups }}"
-    {% endif %}
+    group="{{ item.group | default(omit) }}"
+    groups="{{ item.groups | default(omit) }}"
+    home="{{ item.home | default(omit) }}"
   with_items: auth_users
