@@ -1,3 +1,5 @@
 ---
-auth_sudo:
-  - valdas
+# Config example:
+#
+#auth_sudo:
+#  - valdas

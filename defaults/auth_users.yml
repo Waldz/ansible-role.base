@@ -1,6 +1,7 @@
 ---
-auth_users:
-  - name: valdas
-    comment: "Valdas Petrulis"
-    # Comma separated list of groups e.g. "adm,www-data"
-    groups: "adm"
+# Config Example
+#auth_users:
+#  - name: valdas
+#    comment: "Valdas Petrulis"
+#    # Comma separated list of groups e.g. "adm,www-data"
+#    groups: "adm"

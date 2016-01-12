@@ -23,5 +23,5 @@ Example
         #groups: "adm"
     - auth_keys:
       - user: valdas
-        key: ~/.ssh/id_rsa.pub
+        key: "https://github.com/waldz.keys"
 ```

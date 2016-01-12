@@ -1,4 +1,6 @@
 ---
-auth_keys:
-  - user: valdas
-    key: ~/.ssh/id_rsa.pub
+# Config example:
+#
+# auth_keys:
+#  - user: valdas
+#    key: "https://github.com/waldz.keys"
